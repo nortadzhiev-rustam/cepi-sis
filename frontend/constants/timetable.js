@@ -1,0 +1,67 @@
+export default [
+  {
+    title: 'Mon',
+    timetable: [
+      { period: '08:00 - 08:30', subject: 'Main course' },
+      { period: '08:50 - 09:20', subject: 'Reading' },
+      { period: '09:40 - 10:10', subject: 'Mathematics' },
+      { period: '10:30 - 11:00', subject: 'Informatics' },
+      { period: '11:20 - 11:50', subject: 'History' },
+      { period: '12:10 - 12:40', subject: 'Geography' },
+      { period: '13:00 - 13:30', subject: 'Portuguese' },
+      { period: '13:50 - 14:20', subject: 'French' },
+    ],
+  },
+  {
+    title: 'Tue',
+    timetable: [
+      { period: '08:00 - 08:30', subject: 'Reading' },
+      { period: '08:50 - 09:20', subject: 'Main course' },
+      { period: '09:40 - 10:10', subject: 'Mathematics' },
+      { period: '10:30 - 11:00', subject: 'Eduçao Laboral' },
+      { period: '11:20 - 11:50', subject: 'EMC' },
+      { period: '12:10 - 12:40', subject: 'Geography' },
+      { period: '13:00 - 13:30', subject: 'Portuguese' },
+      { period: '13:50 - 14:20', subject: 'EVP' },
+    ],
+  },
+  {
+    title: 'Wed',
+    timetable: [
+      { period: '08:00 - 08:30', subject: 'Mathematics'},
+      { period: '08:50 - 09:20', subject: 'Reading' },
+      { period: '09:40 - 10:10', subject: 'Main course' },
+      { period: '10:30 - 11:00', subject: 'Robotica' },
+      { period: '11:20 - 11:50', subject: 'Arte' },
+      { period: '12:10 - 12:40', subject: 'Geography' },
+      { period: '13:00 - 13:30', subject: 'Musica' },
+      { period: '13:50 - 14:20', subject: 'French' },
+    ],
+  },
+  {
+    title: 'Thu',
+    timetable: [
+      { period: '08:00 - 08:30', subject:  'French' },
+      { period: '08:50 - 09:20', subject: 'Reading' },
+      { period: '09:40 - 10:10', subject: 'Mathematics' },
+      { period: '10:30 - 11:00', subject: 'Portuguese' },
+      { period: '11:20 - 11:50', subject: 'Chemistry' },
+      { period: '12:10 - 12:40', subject: 'Biology' },
+      { period: '13:00 - 13:30', subject: 'Informatics' },
+      { period: '13:50 - 14:20', subject: 'Main course' },
+    ],
+  },
+  {
+    title: 'Fri',
+    timetable: [
+      { period: '08:00 - 08:30', subject: 'Informatics' },
+      { period: '08:50 - 09:20', subject: 'Grammar' },
+      { period: '09:40 - 10:10', subject: 'Mathematics' },
+      { period: '10:30 - 11:00', subject: 'Physics' },
+      { period: '11:20 - 11:50', subject: 'History' },
+      { period: '12:10 - 12:40', subject: 'Geography' },
+      { period: '13:00 - 13:30', subject: 'Portuguese' },
+      { period: '13:50 - 14:20', subject: 'French' },
+    ],
+  },
+];
