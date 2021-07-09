@@ -13,10 +13,13 @@ const ScheduleScreen = () => {
     const weekday = new Array('Mon', 'Tue', 'Wed', 'Thu', 'Fri');
     return weekday[d.getDay() - 1];
   };
+  React.useEffect(() => {
+    today();
+  }, []);
 
   return (
     <TopNavigator.Navigator
-      initialRouteName={today()}
+      initialRouteName={today() || 'Fri'}
       tabBarOptions={{
         labelStyle: { fontSize: 15, fontWeight: 'bold' },
         activeTintColor: 'white',

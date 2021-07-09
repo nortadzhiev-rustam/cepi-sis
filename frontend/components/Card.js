@@ -14,7 +14,7 @@ import {LinearGradient} from 'expo-linear-gradient';
 
 const Card = (props) => {
   return (
-    <View animation='fadeInUpBig' style={styles.cardView}>
+    <View style={styles.cardView}>
       <TouchableWithoutFeedback
         style={styles.touchableView}
         onPress={() => props.navigation.navigate(props.item.title)}
@@ -43,13 +43,13 @@ const styles = StyleSheet.create({
     flex: 1,
     flexDirection: 'row',
     marginTop: 30,
-    width: Platform.OS === 'web' ? 400 : 300,
+    width: Platform.OS ==='web' ? 1000 : '90%',
     backgroundColor: '#ced4da',
     maxHeight: 100,
     borderRadius: 10,
     shadowColor: '#000',
-    shadowOffset: { width: 0, height: 10 },
-    shadowOpacity: 0.5,
+    shadowOffset: { width: 2, height: 5 },
+    shadowOpacity: 0.2,
     elevation: 20,
     borderColor: '#0a224e',
     borderWidth: 5,
@@ -75,7 +75,8 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
     alignItems: 'center',
   },
-  textStyle: { fontSize: 30, 
+  textStyle: { fontSize: 25, 
     fontWeight: 'bold', 
-    marginLeft: 20 }
+    marginLeft: 20,
+  textTransform: 'uppercase' }
 });

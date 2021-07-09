@@ -2,15 +2,11 @@ import React from 'react';
 import {
   Text,
   View,
-  Alert,
-  TouchableHighlight,
   TouchableWithoutFeedback,
   StyleSheet,
   Platform,
 } from 'react-native';
-import { FontAwesomeIcon } from '@fortawesome/react-native-fontawesome';
 import { withNavigation } from '@react-navigation/compat';
-import { LinearGradient } from 'expo-linear-gradient';
 
 const TimetableCard = (props) => {
   return (
@@ -20,13 +16,11 @@ const TimetableCard = (props) => {
           <View style={styles.iconView}>
             <Text
               style={{
-                flex: 1,
                 color: 'white',
                 width: 100,
                 justifyContent: 'center',
                 alignItems: 'center',
-                textAlignVertical: 'center',
-                textAlign: 'center'
+                textAlign: 'center',
               }}
             >
               {props.period}
@@ -46,19 +40,20 @@ const styles = StyleSheet.create({
     flex: 1,
     flexDirection: 'row',
     // marginHorizontal: 10,
-    width: '90%',
-    backgroundColor: '#ced4da',
+    width: Platform.OS === 'web' ? 1000 : '90%',
+    backgroundColor: '#FFF',
     maxHeight: 60,
     borderRadius: 10,
     shadowColor: '#000',
-    shadowOffset: { width: 0, height: 10 },
-    shadowOpacity: 0.5,
+    shadowOffset: { width: 3, height: 5 },
+    shadowOpacity: 0.2,
     elevation: 10,
     borderColor: '#0a224e',
-    borderWidth: 5,
+    borderWidth: 2,
     justifyContent: 'center',
     alignItems: 'center',
     marginVertical: 10,
+    padding: 0,
   },
   touchableView: {
     width: '100%',
@@ -70,6 +65,8 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
     justifyContent: 'flex-start',
     alignItems: 'center',
+    borderBottomLeftRadius: 10,
+    borderTopLeftRadius: 10,
   },
   iconView: {
     backgroundColor: '#0a224e',
@@ -81,5 +78,10 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
     alignItems: 'center',
   },
-  textStyle: { fontSize: 25, fontWeight: 'bold', marginLeft: 20, textTransform: 'uppercase' },
+  textStyle: {
+    fontSize: 25,
+    fontWeight: 'bold',
+    marginLeft: 20,
+    textTransform: 'uppercase',
+  },
 });
