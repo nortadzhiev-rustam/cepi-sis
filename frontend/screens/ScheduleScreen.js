@@ -1,9 +1,9 @@
 import React from 'react';
-import { Text, ScrollView, View } from 'react-native';
+import { ScrollView, View } from 'react-native';
 import { createMaterialTopTabNavigator } from '@react-navigation/material-top-tabs';
 import { timetable } from '../constants';
 import TimetableCard from '../components/TimetableCard';
-import { DataTable } from 'react-native-paper';
+
 
 const TopNavigator = createMaterialTopTabNavigator();
 
