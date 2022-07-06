@@ -68,7 +68,7 @@ const styles = StyleSheet.create({
   iconView: {
     backgroundColor: '#0a224e',
     maxWidth: 100,
-    height: 100,
+    height: 80,
     borderBottomLeftRadius: 10,
     borderTopLeftRadius: 10,
     flex: 1,
