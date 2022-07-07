@@ -18,7 +18,7 @@ import { useTheme } from 'react-native-paper';
 import jwt from 'jwt-decode';
 import { AuthContext } from '../constants/context';
 
-const SigninScreen = ({ navigation }) => {
+const SignUpScreen = ({ navigation }) => {
   const [data, setData] = React.useState({
     username: '',
     password: '',
@@ -266,7 +266,7 @@ const SigninScreen = ({ navigation }) => {
   );
 };
 
-export default SigninScreen;
+export default SignUpScreen;
 
 const styles = StyleSheet.create({
   container: {

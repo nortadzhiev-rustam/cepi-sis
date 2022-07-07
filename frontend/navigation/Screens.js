@@ -1,19 +1,19 @@
-import React from 'react';
-import { NavigationContainer } from '@react-navigation/native';
-import { createStackNavigator } from '@react-navigation/stack';
-import { createDrawerNavigator } from '@react-navigation/drawer';
-import WelcomeScreen from '../screens/WelcomeScreen';
-import SigninScreen from '../screens/SigninScreen';
-import { AuthContext } from '../constants/context';
-import AsyncStorage from '@react-native-async-storage/async-storage';
-import { FontAwesomeIcon } from '@fortawesome/react-native-fontawesome';
-import { faBars, faBell, faEnvelope } from '@fortawesome/free-solid-svg-icons';
-import { Alert, TouchableOpacity, View } from 'react-native';
-import MainTabScreen from '../screens/MainTabScreen';
-import { DrawerContent } from '../components/DrawerContent';
-import SettingsScreen from '../screens/SettingsScreen';
-import { users } from '../constants/';
-
+import React from "react";
+import { NavigationContainer } from "@react-navigation/native";
+import { createStackNavigator } from "@react-navigation/stack";
+import { createDrawerNavigator } from "@react-navigation/drawer";
+import WelcomeScreen from "../screens/WelcomeScreen";
+import SigninScreen from "../screens/SigninScreen";
+import { AuthContext } from "../constants/context";
+import AsyncStorage from "@react-native-async-storage/async-storage";
+import { FontAwesomeIcon } from "@fortawesome/react-native-fontawesome";
+import { faBars, faBell, faEnvelope } from "@fortawesome/free-solid-svg-icons";
+import { Alert, TouchableOpacity, View } from "react-native";
+import MainTabScreen from "../screens/MainTabScreen";
+import { DrawerContent } from "../components/DrawerContent";
+import SettingsScreen from "../screens/SettingsScreen";
+import { users } from "../constants/";
+import SignUpScreen from "../screens/SignUpScreen";
 const Stack = createStackNavigator();
 const Drawer = createDrawerNavigator();
 const SettingsStack = createStackNavigator();
@@ -21,7 +21,7 @@ const Screens = () => {
   const [state, dispatch] = React.useReducer(
     (prevState, action) => {
       switch (action.type) {
-        case 'RESTORE_TOKEN':
+        case "RESTORE_TOKEN":
           return {
             ...prevState,
             userToken: action.token,
@@ -31,7 +31,7 @@ const Screens = () => {
             firstName: action.firstName,
             lastName: action.lastName,
           };
-        case 'SIGN_IN':
+        case "SIGN_IN":
           return {
             ...prevState,
             username: action.username,
@@ -42,7 +42,7 @@ const Screens = () => {
             userToken: action.token,
             isLoading: false,
           };
-        case 'SIGN_OUT':
+        case "SIGN_OUT":
           return {
             ...prevState,
             username: null,
@@ -51,7 +51,6 @@ const Screens = () => {
             userToken: null,
             firstName: null,
             lastName: null,
-            
           };
       }
     },
@@ -75,18 +74,17 @@ const Screens = () => {
       let firstName;
       let lastName;
       try {
-        userToken = await AsyncStorage.getItem('userToken');
-        username = await AsyncStorage.getItem('username');
-        userType = await AsyncStorage.getItem('userType');
-        firstName = await AsyncStorage.getItem('firstName');
-        lastName = await AsyncStorage.getItem('lastName');
+        userToken = await AsyncStorage.getItem("userToken");
+        username = await AsyncStorage.getItem("username");
+        userType = await AsyncStorage.getItem("userType");
+        firstName = await AsyncStorage.getItem("firstName");
+        lastName = await AsyncStorage.getItem("lastName");
       } catch (e) {
-        console.log('Error: ', e)
+        console.log("Error: ", e);
       }
 
-     
       dispatch({
-        type: 'RESTORE_TOKEN',
+        type: "RESTORE_TOKEN",
         token: userToken,
         username: username,
         userType: userType,
@@ -109,18 +107,18 @@ const Screens = () => {
 
         try {
           await AsyncStorage.multiSet([
-            ['userToken', userToken],
-            ['username', username],
-            ['userType', userType],
-            ['lastName', lastName],
-            ['firstName', firstName],
+            ["userToken", userToken],
+            ["username", username],
+            ["userType", userType],
+            ["lastName", lastName],
+            ["firstName", firstName],
           ]);
         } catch (e) {
           console.log(e);
         }
 
         dispatch({
-          type: 'SIGN_IN',
+          type: "SIGN_IN",
           username: username,
           token: userToken,
           userType: userType,
@@ -130,27 +128,31 @@ const Screens = () => {
       },
       signOut: async () => {
         try {
-          await AsyncStorage.multiRemove(['userToken', 'username', 'userType', 'firstName', 'lastName']);
+          await AsyncStorage.multiRemove([
+            "userToken",
+            "username",
+            "userType",
+            "firstName",
+            "lastName",
+          ]);
         } catch (e) {
           console.log(e);
         }
-        dispatch({ type: 'SIGN_OUT' });
+        dispatch({ type: "SIGN_OUT" });
       },
       signUp: async (data) => {
-        dispatch({ type: 'SIGN_IN', token: 'dummy-auth-token' });
+        dispatch({ type: "SIGN_IN", token: "dummy-auth-token" });
       },
     }),
     []
   );
-
- 
 
   return (
     <AuthContext.Provider value={authContext}>
       <NavigationContainer>
         {state.userToken === null ||
         state.userToken === undefined ||
-        state.userToken === '' ? (
+        state.userToken === "" ? (
           <Stack.Navigator headerMode='none'>
             <Stack.Screen name='Welcome Screen'>
               {(props) => <WelcomeScreen {...props} />}
@@ -158,12 +160,17 @@ const Screens = () => {
             <Stack.Screen name='Sign in'>
               {(props) => <SigninScreen {...props} users={users} />}
             </Stack.Screen>
+            <Stack.Screen name='SignUp' component={SignUpScreen} />
           </Stack.Navigator>
         ) : (
           <Drawer.Navigator
             drawerType='slide'
             drawerContent={(props) => (
-              <DrawerContent {...props} firstName={state.firstName} lastName={state.lastName} />
+              <DrawerContent
+                {...props}
+                firstName={state.firstName}
+                lastName={state.lastName}
+              />
             )}
           >
             <Drawer.Screen name='Main'>
@@ -185,8 +192,8 @@ const SettingsStackScreen = ({ navigation }) => (
   <SettingsStack.Navigator>
     <SettingsStack.Screen
       options={{
-        headerStyle: { backgroundColor: '#0a224e' },
-        headerTintColor: '#fff',
+        headerStyle: { backgroundColor: "#0a224e" },
+        headerTintColor: "#fff",
         headerLeft: () => (
           <TouchableOpacity
             style={{ paddingLeft: 20 }}
@@ -199,15 +206,15 @@ const SettingsStackScreen = ({ navigation }) => (
           <View
             style={{
               flex: 1,
-              flexDirection: 'row',
-              justifyContent: 'center',
-              alignItems: 'center',
+              flexDirection: "row",
+              justifyContent: "center",
+              alignItems: "center",
             }}
           >
             <TouchableOpacity
               style={{ paddingRight: 20 }}
               onPress={() => {
-                Alert.alert('No Notification');
+                Alert.alert("No Notification");
               }}
             >
               <FontAwesomeIcon color='#FFF' size={18} icon={faBell} />
@@ -215,7 +222,7 @@ const SettingsStackScreen = ({ navigation }) => (
             <TouchableOpacity
               style={{ paddingRight: 20 }}
               onPress={() => {
-                Alert.alert('No Email');
+                Alert.alert("No Email");
               }}
             >
               <FontAwesomeIcon color='#FFF' size={18} icon={faEnvelope} />
