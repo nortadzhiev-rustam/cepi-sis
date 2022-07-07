@@ -12,7 +12,8 @@ const middlewares = require("./middlewares");
 const api = require("./api");
 
 const app = express();
-
+//static files
+app.use(express.static("assets"));
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
 

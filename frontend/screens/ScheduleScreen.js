@@ -3,7 +3,7 @@ import { ScrollView, View } from 'react-native';
 import { createMaterialTopTabNavigator } from '@react-navigation/material-top-tabs';
 import { timetable } from '../constants';
 import TimetableCard from '../components/TimetableCard';
-
+import AnimatedFlatList from './animatedFlatList';
 
 const TopNavigator = createMaterialTopTabNavigator();
 
@@ -33,7 +33,7 @@ const ScheduleScreen = () => {
         return (
           <TopNavigator.Screen key={idx} name={schedule.title}>
             {(props) => (
-              <DaysScreen {...props} timetable={schedule.timetable} />
+              <AnimatedFlatList />
             )}
           </TopNavigator.Screen>
         );

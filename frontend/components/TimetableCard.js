@@ -45,7 +45,7 @@ const styles = StyleSheet.create({
     flex: 1,
     flexDirection: 'row',
     // marginHorizontal: 10,
-    width: Platform.OS === 'web' ? 1000 : '90%',
+    width: 350,
     backgroundColor: '#FFF',
     maxHeight: 60,
     borderRadius: 10,

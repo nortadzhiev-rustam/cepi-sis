@@ -90,7 +90,7 @@ const SignUpScreen = ({ navigation }) => {
   const loginHandle = async (userName, password) => {
     const userdata = { username: userName, password: password };
     const response = await axios.post(
-      'http://192.168.1.127:5000/api/v1/login',
+      'http://192.168.1.10:5000/api/v1/login',
       userdata
     );
     

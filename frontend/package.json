@@ -12,7 +12,7 @@
     "@fortawesome/react-native-fontawesome": "^0.2.6",
     "@react-native-async-storage/async-storage": "^1.17.3",
     "@react-native-community/masked-view": "0.1.10",
-    "@react-native-picker/picker": "1.9.11",
+    "@react-native-picker/picker": "2.4.0",
     "@react-navigation/compat": "^5.3.15",
     "@react-navigation/drawer": "^5.12.5",
     "@react-navigation/material-bottom-tabs": "^5.3.15",
@@ -21,28 +21,16 @@
     "@react-navigation/stack": "^5.14.5",
     "axios": "^0.21.1",
     "expo": "^45.0.6",
-<<<<<<< HEAD
-    "expo-linear-gradient": "~9.1.0",
-    "expo-splash-screen": "~0.10.2",
-    "expo-status-bar": "~1.0.4",
-=======
     "expo-linear-gradient": "~11.3.0",
     "expo-splash-screen": "~0.15.1",
     "expo-status-bar": "~1.3.0",
->>>>>>> 731810a5f51e4daac056b9d50629ec9aa50f3342
     "expo-updates": "^0.13.2",
     "jsonwebtoken": "^8.5.1",
     "jwt-decode": "^3.1.2",
     "node-fetch": "^2.6.1",
-<<<<<<< HEAD
-    "react": "16.13.1",
-    "react-dom": "16.13.1",
-    "react-native": "^0.69.0",
-=======
     "react": "17.0.2",
     "react-dom": "17.0.2",
-    "react-native": "^0.68.2",
->>>>>>> 731810a5f51e4daac056b9d50629ec9aa50f3342
+    "react-native": "0.68.2",
     "react-native-animatable": "^1.3.3",
     "react-native-elements": "^3.4.2",
     "react-native-gesture-handler": "~2.2.1",
@@ -54,19 +42,15 @@
     "react-native-screens": "~3.11.1",
     "react-native-svg": "^12.1.1",
     "react-native-tab-view": "^2.16.0",
-    "react-native-unimodules": "^0.14.10",
+    "react-native-unimodules": "^0.15.0",
     "react-native-vector-icons": "^8.1.0",
-<<<<<<< HEAD
-    "react-native-web": "^0.18.2"
-=======
     "react-native-web": "^0.17.7"
->>>>>>> 731810a5f51e4daac056b9d50629ec9aa50f3342
   },
   "devDependencies": {
     "@babel/core": "^7.9.0"
   },
   "private": true,
-  "proxy": "http://192.168.1.127:5000",
+  "proxy": "http://192.168.1.10:5000",
   "name": "frontend",
   "version": "1.0.0"
 }

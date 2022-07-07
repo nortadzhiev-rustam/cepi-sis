@@ -16,7 +16,8 @@ const HomeScreen = () => {
       <StatusBar barStyle='light-content' backgroundColor='#0a224e' />
       <View
         style={{
-          marginTop: 100,
+          marginTop: 50,
+          marginBottom: 30
         }}
       >
         {sections.map((section, idx) => {
