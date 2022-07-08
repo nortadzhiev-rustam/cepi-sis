@@ -41,7 +41,7 @@ const styles = StyleSheet.create({
     flex: 1,
     flexDirection: 'row',
     marginTop: 30,
-    width: 350,
+    width: Platform.isPad ? '80%' : 350,
     backgroundColor: '#ced4da',
     maxHeight: 100,
     borderRadius: 10,
@@ -66,7 +66,7 @@ const styles = StyleSheet.create({
   iconView: {
     backgroundColor: '#0a224e',
     maxWidth: 100,
-    height: 80,
+    height: Platform.isPad ? 100 : 85,
     borderBottomLeftRadius: 5,
     borderTopLeftRadius: 5,
     flex: 1,
