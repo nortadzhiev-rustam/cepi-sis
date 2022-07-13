@@ -41,7 +41,7 @@ export default [
   {
     title: 'Thu',
     timetable: [
-      { period: '08:00 - 08:30', subject:  'French' },
+      { period: '08:00 - 08:30', subject: 'French' },
       { period: '08:50 - 09:20', subject: 'Reading' },
       { period: '09:40 - 10:10', subject: 'Mathematics' },
       { period: '10:30 - 11:00', subject: 'Portuguese' },
