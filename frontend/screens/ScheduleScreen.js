@@ -1,10 +1,10 @@
 import React from 'react';
-import { ScrollView, View } from 'react-native';
+import { ScrollView, View, Animated } from 'react-native';
 import { createMaterialTopTabNavigator } from '@react-navigation/material-top-tabs';
 import { timetable } from '../constants';
 import TimetableCard from '../components/TimetableCard';
 import AnimatedFlatList from './AnimatedFlatList';
-
+import {Avatar, Button, Card, Title, Paragraph } from 'react-native-paper'
 const TopNavigator = createMaterialTopTabNavigator();
 
 const ScheduleScreen = () => {
@@ -16,6 +16,8 @@ const ScheduleScreen = () => {
   React.useEffect(() => {
     today();
   }, []);
+
+  
 
   return (
     <TopNavigator.Navigator
@@ -44,31 +46,23 @@ const ScheduleScreen = () => {
 
 export default ScheduleScreen;
 
-const DaysScreen = ({ timetable }) => {
+const LeftContent = props => <Avatar.Icon {...props} icon="folder" />
+
+const LessonDetailsScreen = () => {
   return (
-    <ScrollView
-      contentContainerStyle={{
-        justifyContent: 'center',
-        alignItems: 'center',
-      }}
-    >
-      <View
-        style={{
-          flex: 1,
-          justifyContent: 'center',
-          alignItems: 'center',
-        }}
-      >
-        {timetable.map((item, idx) => {
-          return (
-            <TimetableCard
-              key={idx}
-              period={item.period}
-              subject={item.subject}
-            />
-          );
-        })}
-      </View>
-    </ScrollView>
+    <View >
+      <Card elevation={10}>
+    <Card.Title title="Card Title" subtitle="Card Subtitle" left={LeftContent} />
+    <Card.Content>
+      <Title>Card title</Title>
+      <Paragraph>Card content</Paragraph>
+    </Card.Content>
+    <Card.Cover source={{ uri: 'https://picsum.photos/700' }} />
+    <Card.Actions>
+      <Button>Cancel</Button>
+      <Button>Ok</Button>
+    </Card.Actions>
+  </Card>
+    </View>
   );
-};
+}
